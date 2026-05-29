@@ -2,7 +2,7 @@
   "name": "gamer-backlog-api",
   "version": "0.1.0",
   "private": true,
-  "description": "Backend para gestión y priorización de videojuegos (Sprint 1)",
+  "description": "Backend para gestión y priorización de videojuegos con autenticación JWT",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@prisma/client": "^6.1.0",
-    "bcrypt": "^6.0.0",
+    "argon2": "^0.44.0",
     "cors": "^2.8.3",
     "dotenv": "^16.4.1",
     "express": "^4.21.1",

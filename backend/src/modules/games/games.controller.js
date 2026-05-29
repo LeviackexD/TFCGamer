@@ -1,10 +1,14 @@
+import { z } from 'zod';
 import { GamesUseCases } from './games.useCases.js';
 import { createGameSchema, updateGameSchema, completeGameSchema, listGamesQuerySchema } from './games.schemas.js';
 
 const gamesUseCases = new GamesUseCases();
 
+const idParamSchema = z.coerce.number().positive('El ID debe ser un número positivo');
+
 function parseId(req) {
-  return Number(req.params.id);
+  const { id } = req.params;
+  return idParamSchema.parse(id);
 }
 
 export const gamesController = {

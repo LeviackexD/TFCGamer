@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+import argon2 from 'argon2';
 import { AuthService } from './auth.service.js';
 import { signToken } from '../../utils/jwt.js';
 import { ConflictError, NotFoundError, UnauthorizedError } from '../../lib/errors.js';
@@ -13,7 +13,7 @@ export class AuthUseCases {
       throw new ConflictError('El email ya está registrado');
     }
 
-    const hashedPassword = await bcrypt.hash(input.password, 12);
+    const hashedPassword = await argon2.hash(input.password);
 
     const user = await authService.createUser({
       email: input.email,
@@ -40,7 +40,7 @@ export class AuthUseCases {
       throw new UnauthorizedError('Credenciales incorrectas');
     }
 
-    const validPassword = await bcrypt.compare(input.password, user.password);
+    const validPassword = await argon2.verify(user.password, input.password);
 
     if (!validPassword) {
       throw new UnauthorizedError('Credenciales incorrectas');
