@@ -1,0 +1,15 @@
+meta {
+  name: Listar juegos
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/games
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJtYW51QHRlc3QuY29tIiwiYWxpYXMiOiJTdXBlckdhbWVyIiwiaWF0IjoxNzc5OTkwOTE4LCJleHAiOjE3ODA1OTU3MTh9.Bk-Y4ocJXE6KHCr4FGWw48jMX7zotd4Kbc6ajuzBgUY
+}

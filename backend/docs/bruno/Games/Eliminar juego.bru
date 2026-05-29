@@ -1,0 +1,15 @@
+meta {
+  name: Eliminar juego
+  type: http
+  seq: 9
+}
+
+delete {
+  url: http://localhost:4000/api/games/1
+  body: none
+  auth: none
+}
+
+headers {
+  Authorization: Bearer {{token}}
+}

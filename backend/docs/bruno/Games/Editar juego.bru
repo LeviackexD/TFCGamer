@@ -1,0 +1,28 @@
+meta {
+  name: Editar juego
+  type: http
+  seq: 8
+}
+
+put {
+  url: http://localhost:4000/api/games/6
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  Authorization: Bearer {{token}}
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJtYW51QHRlc3QuY29tIiwiYWxpYXMiOiJTdXBlckdhbWVyIiwiaWF0IjoxNzc5OTkwOTE4LCJleHAiOjE3ODA1OTU3MTh9.Bk-Y4ocJXE6KHCr4FGWw48jMX7zotd4Kbc6ajuzBgUY
+}
+
+body:json {
+  {
+    "name": "Galaxy 2",
+    "metacriticScore": 85,
+    "hoursToBeat": 60
+  }
+}

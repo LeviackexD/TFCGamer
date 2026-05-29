@@ -1,0 +1,11 @@
+{
+  "version": "1",
+  "name": "Gamer Backlog API",
+  "type": "collection",
+  "ignore": [],
+  "folders": [
+    "Health",
+    "Auth",
+    "Games"
+  ]
+}
